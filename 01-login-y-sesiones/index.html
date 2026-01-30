@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<script>
+  if (localStorage.getItem("sesion") === "activa") {
+    window.location.href = "dashboard.html";
+  }
+</script>
+
+<body>
+
+  <div class="login-box">
+    <h2>Iniciar sesión</h2>
+
+    <input type="text" id="usuario" placeholder="Usuario">
+    <input type="password" id="password" placeholder="Contraseña">
+
+    <button onclick="login()">Entrar</button>
+
+    <p id="mensaje"></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
