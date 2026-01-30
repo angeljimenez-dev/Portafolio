@@ -1,0 +1,92 @@
+/*
+Programador: Angel Fernando Jimenez Angeles
+
+OBJETIVO GENERAL:
+Definir el diseño visual del formulario de inicio de sesión,
+centrando el contenido en pantalla y aplicando estilos modernos
+para mejorar la experiencia del usuario.
+*/
+
+/* 
+BLOQUE IMPORTANTE:
+Estilos generales del cuerpo de la página.
+Se encarga de centrar el formulario vertical y horizontalmente
+y definir la tipografía y el color de fondo.
+*/
+body {
+  font-family: Arial, sans-serif;
+  background: #0f172a;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*
+BLOQUE IMPORTANTE:
+Contenedor principal del formulario de login.
+Define el fondo, tamaño, espaciado y alineación del contenido.
+*/
+.login-box {
+  background: #1e293b;
+  padding: 30px;
+  border-radius: 10px;
+  width: 300px;
+  text-align: center;
+}
+
+/*
+BLOQUE IMPORTANTE:
+Estilo del título del formulario.
+Mejora la visibilidad del texto sobre el fondo oscuro.
+*/
+h2 {
+  color: white;
+}
+
+/*
+BLOQUE IMPORTANTE:
+Estilos aplicados a los campos de entrada de datos.
+Asegura consistencia visual y facilidad de uso.
+*/
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: none;
+}
+
+/*
+BLOQUE IMPORTANTE:
+Estilos del botón de envío del formulario.
+Incluye efectos visuales al pasar el cursor.
+*/
+button {
+  width: 100%;
+  padding: 10px;
+  background: #38bdf8;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/*
+BLOQUE IMPORTANTE:
+Efecto hover del botón.
+Cambia el color para indicar interacción al usuario.
+*/
+button:hover {
+  background: #0ea5e9;
+}
+
+/*
+BLOQUE IMPORTANTE:
+Estilos del mensaje de estado.
+Se utiliza para mostrar mensajes de error o confirmación.
+*/
+#mensaje {
+  margin-top: 10px;
+  color: #f87171;
+}

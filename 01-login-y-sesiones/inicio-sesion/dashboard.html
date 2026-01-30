@@ -1,0 +1,60 @@
+<!--
+Programador: Angel Fernando Jimenez Angeles
+
+OBJETIVO GENERAL:
+Controlar el acceso a una página protegida (dashboard) mediante una sesión
+simulada usando localStorage, permitiendo únicamente el acceso a usuarios
+autenticados y ofreciendo la opción de cerrar sesión.
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+</head>
+<body>
+
+<!-- 
+BLOQUE IMPORTANTE:
+Este bloque muestra el mensaje de bienvenida al usuario.
+Sirve para confirmar visualmente que la sesión fue iniciada correctamente.
+-->
+
+  <h1>Bienvenido 👋</h1>
+  <p>Sesión iniciada correctamente</p>
+
+<!-- 
+BLOQUE IMPORTANTE:
+Botón que permite al usuario cerrar su sesión de forma manual.
+Al hacer clic, se ejecuta la función cerrarSesion().
+-->
+
+  <button onclick="cerrarSesion()">Cerrar sesión</button>
+
+<!--
+BLOQUE IMPORTANTE:
+Script encargado de validar la sesión activa y controlar el acceso
+a la página, además de definir las funciones principales del sistema.
+-->
+
+  <script>
+    // BLOQUE IMPORTANTE:
+    // Verificación de sesión activa.
+    // Si no existe una sesión válida, se redirige al login.
+    if (localStorage.getItem("sesion") !== "activa") {
+      window.location.href = "index.html";
+    }
+
+    // FUNCIÓN CLAVE:
+    // cerrarSesion()
+    // Elimina la sesión almacenada y redirige al usuario
+    // a la página de inicio de sesión.
+    function cerrarSesion() {
+      localStorage.removeItem("sesion");
+      window.location.href = "index.html";
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!--
+Programador: Angel Fernando Jimenez Angeles
+
+OBJETIVO GENERAL:
+Permitir al usuario iniciar sesión mediante un formulario,
+validar sus credenciales con JavaScript y redirigirlo al
+dashboard si la autenticación es correcta. Además, evitar
+que usuarios con sesión activa vuelvan a la pantalla de login.
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<!--
+BLOQUE IMPORTANTE:
+Verificación automática de sesión activa.
+Si el usuario ya tiene una sesión iniciada,
+se redirige directamente al dashboard.
+-->
+<script>
+  if (localStorage.getItem("sesion") === "activa") {
+    window.location.href = "dashboard.html";
+  }
+</script>
+
+<body>
+
+<!--
+BLOQUE IMPORTANTE:
+Contenedor principal del formulario de inicio de sesión.
+Agrupa los campos de entrada, el botón y los mensajes al usuario.
+-->
+  <div class="login-box">
+    <h2>Iniciar sesión</h2>
+
+    <!-- BLOQUE IMPORTANTE:
+         Campo para ingresar el nombre de usuario -->
+    <input type="text" id="usuario" placeholder="Usuario">
+
+    <!-- BLOQUE IMPORTANTE:
+         Campo para ingresar la contraseña -->
+    <input type="password" id="password" placeholder="Contraseña">
+
+    <!--
+    BLOQUE IMPORTANTE:
+    Botón que ejecuta la función login() para validar
+    las credenciales del usuario.
+    -->
+    <button onclick="login()">Entrar</button>
+
+    <!--
+    BLOQUE IMPORTANTE:
+    Elemento destinado a mostrar mensajes de error
+    o confirmación al usuario.
+    -->
+    <p id="mensaje"></p>
+  </div>
+
+  <!--
+  BLOQUE IMPORTANTE:
+  Archivo JavaScript externo que contiene la lógica
+  principal del inicio de sesión.
+  -->
+  <script src="script.js"></script>
+
+</body>
+</html>
